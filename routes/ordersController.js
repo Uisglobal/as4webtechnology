@@ -42,7 +42,6 @@ router.put('/:userId', async (req, res) => {
 });
 
 // Delete an order
-// Delete an order
 router.delete('/:userId', async (req, res) => {
     try {
         const userId = req.params.userId;
