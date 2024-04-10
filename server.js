@@ -15,14 +15,14 @@ mongoose.connect('mongodb+srv://dpatel4419:IRIij0zroeErfcNm@clusterdp0.viezzur.m
     .then(() => console.log("connection success"))
     .catch(err => console.error("connection error:", err));
 
-// API routes
+// Import API routes
 const productRoutes = require('./routes/productsController');
 const userRoutes = require('./routes/usersController');
 const commentRoutes = require('./routes/commentController');
 const cartRoutes = require('./routes/cartController');
 const orderRoutes = require('./routes/ordersController');
 
-// API End Points
+// End Point
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/comments', commentRoutes);

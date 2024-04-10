@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "2a5d3f2a-6399-4902-b819-492e2d46b50d",
+		"name": "Assignment4 web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31207937"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \" fresh dark cake\",\n    \"image\": \"product.jpg\",\n    \"pricing\": 19.99,\n    \"shippingCost\": 5.99\n}\n"
+						},
+						"url": "http://localhost:4000/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4000/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"description\":\"Updated cake\", \"image\":\"updated.jpg\", \"pricing\":29.99, \"shippingCost\":6.99}"
+						},
+						"url": "http://localhost:4000/api/products/6614d161b06831a9a994ad07"
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4000/api/products/6614d161b06831a9a994ad07"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"dpatel4419@conestogac.on.ca\", \"password\":\"dp\", \"username\":\"dp\", \"shippingAddress\":\"hamilton\"}"
+						},
+						"url": "http://localhost:4000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"updateduser@example.com\", \"password\":\"updatedpassword\", \"username\":\"updatedusername\", \"shippingAddress\":\"updated shipping address\"}"
+						},
+						"url": "http://localhost:4000/api/users/6614d233b06831a9a994ad0b"
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4000/api/users/<user_id>"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"6614d073b06831a9a994ad04\",\n    \"userId\": \"6614d233b06831a9a994ad0b\",\n    \"commentId\": \"1\",  \n    \"product\": \"6614d073b06831a9a994ad04\",\n    \"user\": \"6614d233b06831a9a994ad0b\",\n    \"rating\": 4,\n    \"text\": \"This is a comment.\"\n}\n"
+						},
+						"url": "http://localhost:4000/api/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4000/api/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "comments",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"rating\":4, \"text\":\"Updated comment text\"}"
+						},
+						"url": "http://localhost:4000/api/comments/<comment_id>"
+					},
+					"response": []
+				},
+				{
+					"name": "comments",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4000/api/comments/<comment_id>"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"products\":[{\"product\":\"productId1\",\"quantity\":2},{\"product\":\"productId2\",\"quantity\":3}]}"
+						},
+						"url": "http://localhost:4000/api/carts/6614d233b06831a9a994ad0b"
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4000/api/carts/6614d233b06831a9a994ad0b"
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"products\":[{\"productId\":\"66156e26c27b3fbfca9df2d8\",\"quantity\":3},{\"productId\":\"66156e26c27b3fbfca9df2d9\",\"quantity\":1}]}"
+						},
+						"url": "http://localhost:4000/api/carts/6614d233b06831a9a994ad0b"
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4000/api/carts/6614d233b06831a9a994ad0b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"1234\",\n    \"products\": [\n        { \"productId\": \"product1\", \"quantity\": 2 },\n        { \"productId\": \"product2\", \"quantity\": 1 }\n    ],\n    \"totalAmount\": 50\n}"
+						},
+						"url": "http://localhost:4000/api/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4000/api/orders/1234"
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\": 1234, \"products\": [{\"productId\": \"updateproduct1\", \"quantity\": 3}, {\"productId\": \"product2\", \"quantity\": 1}], \"totalAmount\": 60}"
+						},
+						"url": "http://localhost:4000/api/orders/1234"
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4000/api/orders/1234"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
