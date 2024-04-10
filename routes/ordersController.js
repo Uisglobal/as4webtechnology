@@ -5,7 +5,7 @@ const Order = require('../Models/Orders');
 // GET orders by user ID
 router.get('/:userId', async (req, res) => {
     try {
-        const orders = await Order.find({ user: req.params.userId }).populate('items.product');
+        const orders = await Order.find({ userId: req.params.userId }).populate('products.productId');
         res.json(orders);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -31,9 +31,10 @@ router.post('/', async (req, res) => {
 });
 
 // Update an order
-router.put('/:id', async (req, res) => {
+router.put('/:userId', async (req, res) => {
     try {
-        const updatedOrder = await Order.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const userId = req.params.userId;
+        const updatedOrder = await Order.findOneAndUpdate({ userId: userId }, req.body, { new: true });
         res.json(updatedOrder);
     } catch (err) {
         res.status(400).json({ message: err.message });
@@ -41,9 +42,11 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete an order
-router.delete('/:id', async (req, res) => {
+// Delete an order
+router.delete('/:userId', async (req, res) => {
     try {
-        const deletedOrder = await Order.findByIdAndDelete(req.params.id);
+        const userId = req.params.userId;
+        const deletedOrder = await Order.findOneAndDelete({ userId: userId });
         if (!deletedOrder) {
             return res.status(404).json({ message: 'Order not found' });
         }
